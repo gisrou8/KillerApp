@@ -1,0 +1,25 @@
+﻿@model KillerAppAbdoAryanzad.Models.ViewModels.BijproductViewModel
+
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            @foreach (var b in Model.bijproducten)
+            {
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4 class="pull-right">€@b.Prijs</h4>
+                            <h4>
+                                <a> @Html.ActionLink(@b.Naam, "Product/" + @b.ID, "Home")</a>
+                            </h4>
+                            <p>@b.ProductInformatie</p>
+                        </div>
+                    </div>
+                </div>
+            }
+          </div>
+    </div>
+</div>

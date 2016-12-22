@@ -14,7 +14,7 @@ namespace KillerAppAbdoAryanzad.Database
         {
             List<SpecificatieSoftdrugs> SpecificatieSoftdrugsen = new List<SpecificatieSoftdrugs>();
 
-            SqlCommand cmd = new SqlCommand("Select * from SpecificatieSoftdrugs");
+            SqlCommand cmd = new SqlCommand("Select * from Specificatie_Softdrugs");
 
             using (DatabaseConnectie conn = new DatabaseConnectie())
             {

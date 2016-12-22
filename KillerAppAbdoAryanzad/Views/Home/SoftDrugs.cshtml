@@ -1,0 +1,41 @@
+﻿@model KillerAppAbdoAryanzad.Models.ViewModels.TypeDrugsSpecificatieViewModel
+
+
+@{
+    ViewBag.Title = "About";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            @foreach (var i in Model.t)
+            {
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4 class="pull-right">€@i.Prijs</h4>
+                            <h4>
+                                <a> @Html.ActionLink(@i.Naam, "Product/" + @i.ID, "Home")</a>
+                            </h4>
+                            <p>@i.ExtraInformatie </p>
+                            <p>@foreach (var s in Model.s)
+                            {
+                                foreach (var st in Model.st)
+                                {
+                                    if(i.ID == st.TypeDrugsID)
+                                    {
+                                        if(s.ID == st.SpecificatieID)
+                                        {
+                                            @s.SpecificatieTekst;
+                                        }
+                                    }
+                                }
+                            }</p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+           
+        </div>
+    </div>
+</div>

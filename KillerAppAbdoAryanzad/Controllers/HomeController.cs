@@ -1,4 +1,6 @@
 ﻿using KillerAppAbdoAryanzad.Database;
+using KillerAppAbdoAryanzad.Database.Repositories;
+using KillerAppAbdoAryanzad.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +13,38 @@ namespace KillerAppAbdoAryanzad.Controllers
     {
         public ActionResult Index()
         {
-            MSSQLTypeDrugsContext test = new MSSQLTypeDrugsContext();
-            test.GetAll();
+          
             return View();
         }
 
-        public ActionResult Wiet()
+        public ActionResult SoftDrugs()
         {
-            ViewBag.Message = "Your application description page.";
+            TypeDrugsRepo TypeDrugsrepo = new TypeDrugsRepo(new MSSQLTypeDrugsContext());
+            SpecificatieRepo specificatie = new SpecificatieRepo(new MSSQLSpecificatieContext());
+            SpecifactieSoftdrugsRepo ST = new SpecifactieSoftdrugsRepo(new MSSQLSpecificatieSoftdrugsSoftdrugsContext());
+            TypeDrugsSpecificatieViewModel model = new TypeDrugsSpecificatieViewModel(TypeDrugsrepo.GetAll(), specificatie.GetAll(), ST.GetAll());
 
-            return View();
+            return View(model);
         }
 
-        public ActionResult Hasj()
+        public ActionResult Bijproduct()
         {
             ViewBag.Message = "Your contact page.";
+            BijproductRepo bijproduct = new BijproductRepo(new MSSQLBijproductContext());
+            BijproductViewModel model = new BijproductViewModel(bijproduct.GetAll());
 
-            return View();
+            return View(model);
+        }
+
+
+        public ActionResult Product(int id)
+        {
+            TypeDrugsRepo typeDrugsrepo = new TypeDrugsRepo(new MSSQLTypeDrugsContext());
+            BijproductRepo bijproductrepo = new BijproductRepo(new MSSQLBijproductContext());
+            ProductModelView model = new ProductModelView(id, typeDrugsrepo.GetAll(), bijproductrepo.GetAll());
+
+            return View(model);
+            
         }
     }
 }

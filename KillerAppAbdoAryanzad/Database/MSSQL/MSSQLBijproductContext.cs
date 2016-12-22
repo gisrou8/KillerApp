@@ -26,7 +26,7 @@ namespace KillerAppAbdoAryanzad.Database
                     bijproducten.Add(new Bijproduct(Convert.ToInt32(reader["ID"]),
                                             Convert.ToString(reader["Naam"]),
                                             Convert.ToDecimal(reader["Prijs"]),
-                                            Convert.ToString(reader["Product_Informatie"])));
+                                            Convert.ToString(reader["ProductInformatie"])));
                 }
             }
             return bijproducten;

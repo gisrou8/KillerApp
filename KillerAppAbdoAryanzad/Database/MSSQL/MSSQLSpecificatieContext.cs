@@ -24,7 +24,7 @@ namespace KillerAppAbdoAryanzad.Database
                 while (reader.Read())
                 {
                     Specificatieen.Add(new Specificatie(Convert.ToInt32(reader["ID"]),
-                                            Convert.ToString(reader["Specificatie-tekst"])));
+                                            Convert.ToString(reader["Specificatietekst"])));
                 }
             }
             return Specificatieen;
