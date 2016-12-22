@@ -1,4 +1,5 @@
-﻿using KillerAppAbdoAryanzad.Models;
+﻿using KillerAppAbdoAryanzad.Database.Interfaces;
+using KillerAppAbdoAryanzad.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace KillerAppAbdoAryanzad.Database
 {
-    public class MSSQLUserContext
+    public class MSSQLUserContext : IUser
     {
         public List<User> GetAll()
         {
@@ -35,13 +36,12 @@ namespace KillerAppAbdoAryanzad.Database
 
         public void Add(User user)
         {
-            SqlCommand cmd = new SqlCommand("Insert into Account (ID, Gebruikersnaam, Wachtwoord, Email)"
-                                             + "Values (@ID, @Gebruikersnaam, @Wachtwoord, @Email)");
+            SqlCommand cmd = new SqlCommand("Insert into Account (Gebruikersnaam, Wachtwoord, Email)"
+                                             + "Values (@Gebruikersnaam, @Wachtwoord, @Email)");
 
             using (DatabaseConnectie conn = new DatabaseConnectie())
             {
                 cmd.Connection = conn.Conn;
-                cmd.Parameters.AddWithValue("@ID", user.ID);
                 cmd.Parameters.AddWithValue("@Gebruikersnaam", user.Gebruikersnaam);
                 cmd.Parameters.AddWithValue("@Wachtwoord", user.Wachtwoord);
                 cmd.Parameters.AddWithValue("@Email", user.Email);

@@ -1,4 +1,5 @@
-﻿using KillerAppAbdoAryanzad.Models;
+﻿using KillerAppAbdoAryanzad.Database.Interfaces;
+using KillerAppAbdoAryanzad.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace KillerAppAbdoAryanzad.Database
 {
-    public class MSSQLTypeDrugsContext
+    public class MSSQLTypeDrugsContext : ITypeDrugs
     {
         public List<TypeDrugs> GetAll()
         {

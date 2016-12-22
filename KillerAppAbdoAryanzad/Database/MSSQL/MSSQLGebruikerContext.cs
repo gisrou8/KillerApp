@@ -1,4 +1,5 @@
-﻿using KillerAppAbdoAryanzad.Models;
+﻿using KillerAppAbdoAryanzad.Database.Interfaces;
+using KillerAppAbdoAryanzad.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace KillerAppAbdoAryanzad.Database
 {
-    public class MSSQLGebruikerContext
+    public class MSSQLGebruikerContext : IGebruiker
     {
         public List<Gebruiker> GetAll()
         {
@@ -36,13 +37,12 @@ namespace KillerAppAbdoAryanzad.Database
 
         public void Add(Gebruiker gebruiker)
         {
-            SqlCommand cmd = new SqlCommand("Insert into AccountType (ID, Account_ID, AccountType, Naam, Status, Woonplaats)"
-                                             + "Values (@ID, @Account_ID, @AccountType, @Naam, @Status, @Woonplaats)");
+            SqlCommand cmd = new SqlCommand("Insert into AccountType (Account_ID, AccountType, Naam, Status, Woonplaats)"
+                                             + "Values (@Account_ID, @AccountType, @Naam, @Status, @Woonplaats)");
 
             using (DatabaseConnectie conn = new DatabaseConnectie())
             {
                 cmd.Connection = conn.Conn;
-                cmd.Parameters.AddWithValue("@ID", gebruiker.ID);
                 cmd.Parameters.AddWithValue("@Account_ID", gebruiker.Account_ID);
                 cmd.Parameters.AddWithValue("@AccountType", gebruiker.AccountType);
                 cmd.Parameters.AddWithValue("@Naam", gebruiker.Naam);
