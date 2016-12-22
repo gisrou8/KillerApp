@@ -1,0 +1,109 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: yellow;
+}
+
+.navbar-inverse {
+    background-color: green;
+    border-color: black;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: yellow;
+}
+
+.container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+    text-align: center;
+}
+
+.btn-info {
+    color: #ffffff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    width: 90px;
+    height: 45px;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 493px;
+}
+.jumbotron p {
+    line-height: 1.4;
+    margin-top: 22px;
+    margin-bottom: 46px;
+}
+.btn-info {
+    color: yellow;
+    background-color: green;
+    border-color: black;
+    width: 90px;
+    height: 45px;
+   
+}
+.btn-info:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: white;
+    background-color: green;
+    border-color: black; /*set the color you want here*/
+}
+
+.Height{
+    height: 350px;
+    border-radius: 6px;
+    text-align:center;
+}
+
+.Colllor{
+    background-color: #2abd2a;
+        color: #ffff6e;
+}
+
+.Collor{
+    background-color: #eeeeee;
+}
+
+.col-md-4 {
+    width: 33%;
+    margin-left: 3px;
+    margin-top: 10px;
+}
+
+
+
+
+.col-md-9 {
+    width: 100%;
+}
+
+
+
+
+
+
