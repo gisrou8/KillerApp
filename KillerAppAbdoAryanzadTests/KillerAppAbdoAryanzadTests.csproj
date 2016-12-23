@@ -51,7 +51,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Database\Repositories\BestellingRepoTests.cs" />
+    <Compile Include="Database\Repositories\AdminRepoTests.cs" />
+    <Compile Include="Database\Repositories\BijproductRepoTests.cs" />
+    <Compile Include="Database\Repositories\GebruikerRepoTests.cs" />
+    <Compile Include="Database\Repositories\ReactieRepoTests.cs" />
+    <Compile Include="Database\Repositories\SpecifactieSoftdrugsRepoTests.cs" />
+    <Compile Include="Database\Repositories\SpecificatieRepoTests.cs" />
+    <Compile Include="Database\Repositories\TypeDrugsRepoTests.cs" />
+    <Compile Include="Database\Repositories\UserRepoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

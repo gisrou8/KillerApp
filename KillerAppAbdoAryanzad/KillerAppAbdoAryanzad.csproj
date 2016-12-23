@@ -182,7 +182,14 @@
     <Compile Include="Database\Interfaces\ISpecificatieSoftdrugs.cs" />
     <Compile Include="Database\Interfaces\ITypeDrugs.cs" />
     <Compile Include="Database\Interfaces\IUser.cs" />
+    <Compile Include="Database\Memory\AdminContext.cs" />
+    <Compile Include="Database\Memory\BijproductContext.cs" />
     <Compile Include="Database\Memory\GebruikerContext.cs" />
+    <Compile Include="Database\Memory\ReactieContext.cs" />
+    <Compile Include="Database\Memory\SpecificatieContext.cs" />
+    <Compile Include="Database\Memory\SpecificatieSoftdrugsContext.cs" />
+    <Compile Include="Database\Memory\TypeDrugsContext.cs" />
+    <Compile Include="Database\Memory\UserContext.cs" />
     <Compile Include="Database\MSSQL\DatabaseConnectie.cs" />
     <Compile Include="Database\MSSQL\MSSQLAdminContext.cs" />
     <Compile Include="Database\MSSQL\MSSQLBestellingProcedure.cs" />
