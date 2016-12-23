@@ -37,14 +37,31 @@ namespace KillerAppAbdoAryanzad.Controllers
         }
 
 
-        public ActionResult Product(int id)
+        public ActionResult TypeDrugsProduct(int id)
         {
             TypeDrugsRepo typeDrugsrepo = new TypeDrugsRepo(new MSSQLTypeDrugsContext());
             BijproductRepo bijproductrepo = new BijproductRepo(new MSSQLBijproductContext());
-            ProductModelView model = new ProductModelView(id, typeDrugsrepo.GetAll(), bijproductrepo.GetAll());
+            SpecificatieRepo specificatie = new SpecificatieRepo(new MSSQLSpecificatieContext());
+            SpecifactieSoftdrugsRepo ST = new SpecifactieSoftdrugsRepo(new MSSQLSpecificatieSoftdrugsSoftdrugsContext());
+            ReactieRepo reactierepo = new ReactieRepo(new MSSQLReactieContext());
+            GebruikerRepo gebruikerrepo = new GebruikerRepo(new MSSQLGebruikerContext());
+            ProductModelView model = new ProductModelView(id, typeDrugsrepo.GetAll(), bijproductrepo.GetAll(), specificatie.GetAll(), ST.GetAll(), reactierepo.GetAll(), gebruikerrepo.GetAll());
 
             return View(model);
             
+        }
+
+        public ActionResult BijproductProduct(int id)
+        {
+            TypeDrugsRepo typeDrugsrepo = new TypeDrugsRepo(new MSSQLTypeDrugsContext());
+            BijproductRepo bijproductrepo = new BijproductRepo(new MSSQLBijproductContext());
+            SpecificatieRepo specificatie = new SpecificatieRepo(new MSSQLSpecificatieContext());
+            SpecifactieSoftdrugsRepo ST = new SpecifactieSoftdrugsRepo(new MSSQLSpecificatieSoftdrugsSoftdrugsContext());
+            ReactieRepo reactierepo = new ReactieRepo(new MSSQLReactieContext());
+            GebruikerRepo gebruikerrepo = new GebruikerRepo(new MSSQLGebruikerContext());
+            ProductModelView model = new ProductModelView(id, typeDrugsrepo.GetAll(), bijproductrepo.GetAll(), specificatie.GetAll(), ST.GetAll(), reactierepo.GetAll(), gebruikerrepo.GetAll());
+
+            return View(model);
         }
     }
 }

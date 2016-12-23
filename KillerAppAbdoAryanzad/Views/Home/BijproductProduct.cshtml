@@ -1,0 +1,54 @@
+﻿@model KillerAppAbdoAryanzad.Models.ViewModels.ProductModelView
+
+@{
+    ViewBag.Title = "BijproductProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <div class="caption-full">
+                    <h1 class="pull-right">€@Model.bijproduct.Prijs</h1>
+                    <h1>
+                        @Model.bijproduct.Naam
+                    </h1>
+                    <div id="Speci">
+                        <h3>@Model.bijproduct.ProductInformatie</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success">Toevoegen aan Bestelling</a>
+                </div>
+
+                @foreach (var i in Model.toonBijreacties)
+                {
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                @foreach (var it in Model.gebruikers)
+                            {
+                                if (i.ID == it.ID)
+                                {
+                                    @(it.Naam + ":");
+
+                                }
+                            }
+                        </h4>
+                        <p>@i.Tekst</p>
+                    </div>
+                </div>
+                    <hr>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

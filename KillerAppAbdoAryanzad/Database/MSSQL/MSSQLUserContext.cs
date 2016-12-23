@@ -48,5 +48,33 @@ namespace KillerAppAbdoAryanzad.Database
                 cmd.ExecuteNonQuery();
             }
         }
+
+
+        public User Login(string Gebruikersnaam, string Wachtwoord)
+        {
+
+            SqlCommand cmd = new SqlCommand("SELECT * " +
+                                           "FROM Account " +
+                                           "WHERE Gebruikersnaam = @Gebruikersnaam" +
+                                           "  AND Wachtwoord = @Wachtwoord;");
+
+            using (DatabaseConnectie conn = new DatabaseConnectie())
+            {
+                cmd.Connection = conn.Conn;
+                cmd.Parameters.AddWithValue("@Gebruikersnaam", Gebruikersnaam);
+                cmd.Parameters.AddWithValue("@Wachtwoord", Wachtwoord);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                User user = new User(Convert.ToInt32(reader["ID"]),
+                                     Convert.ToString(reader["Gebruikersnaam"]),
+                                     Convert.ToString(reader["Wachtwoord"]),
+                                     Convert.ToString(reader["Email"]));
+                return user;
+            }
+
+            
+                
+            
+        }
     }
 }

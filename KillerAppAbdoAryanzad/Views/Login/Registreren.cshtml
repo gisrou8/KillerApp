@@ -1,0 +1,83 @@
+﻿@model KillerAppAbdoAryanzad.Models.Gebruiker
+
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Registreren", "Login", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            <h2>Registreer nu</h2>
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Gebruikersnaam</label>
+                        <div class="col-md-4">
+                            <input id="textinput" name="Gebruikersnaam" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Wachtwoord</label>
+                        <div class="col-md-4">
+                            <input id="textinput" name="Wachtwoord" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Email</label>
+                        <div class="col-md-4">
+                            <input id="textinput" name="Email" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Naam</label>
+                        <div class="col-md-4">
+                            <input id="textinput" name="Naam" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Status</label>
+                        <div class="col-md-4">
+                            <input id="textinput" name="Status" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Woonplaats</label>
+                        <div class="col-md-4">
+                            <input id="textinput" name="Woonplaats" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+                   @if(Model != null)
+                   {
+                       <span>Registreren is gelukt!</span>
+                   }
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"> </label>
+                        <div class="col-md-4">
+                            <button id="singlebutton" name="singlebutton" class="btn">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+}
+
+
+
+

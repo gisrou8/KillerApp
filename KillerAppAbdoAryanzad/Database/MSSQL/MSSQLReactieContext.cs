@@ -23,11 +23,15 @@ namespace KillerAppAbdoAryanzad.Database
 
                 while (reader.Read())
                 {
+                    int reactie_ID = (reader["Reactie_ID"] != DBNull.Value) ? Convert.ToInt32(reader["Reactie_ID"]) : 0;
+                    int AccountType_ID = (reader["AccountType_ID"] != DBNull.Value) ? Convert.ToInt32(reader["AccountType_ID"]) : 0;
+                    int Bijproduct_ID = (reader["Bijproduct_ID"] != DBNull.Value) ? Convert.ToInt32(reader["Bijproduct_ID"]) : 0;
+                    int TypeDrugs_ID = (reader["TypeDrugs_ID"] != DBNull.Value) ? Convert.ToInt32(reader["TypeDrugs_ID"]) : 0;
                     Reacties.Add(new Reactie(Convert.ToInt32(reader["ID"]),
-                                            Convert.ToInt32(reader["Reactie_ID"]),
-                                            Convert.ToInt32(reader["AccountType_ID"]),
-                                            Convert.ToInt32(reader["Bijproduct_ID"]),
-                                            Convert.ToInt32(reader["TypeDrugs_ID"]),
+                                            reactie_ID,
+                                            AccountType_ID,
+                                            Bijproduct_ID,
+                                            TypeDrugs_ID,
                                             Convert.ToString(reader["Tekst"])));
                 }
             }

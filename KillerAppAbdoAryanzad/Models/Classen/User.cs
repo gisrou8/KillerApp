@@ -23,5 +23,14 @@ namespace KillerAppAbdoAryanzad.Models
             this.Email = Email;
          
         }
+        public User(string Gebruikersnaam, string Wachtwoord, string Email)
+        {
+            this.ID = ID;
+            this.Gebruikersnaam = Gebruikersnaam;
+            this.Wachtwoord = Wachtwoord;
+
+            this.Email = Email;
+
+        }
     }
 }

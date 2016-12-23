@@ -11,5 +11,7 @@ namespace KillerAppAbdoAryanzad.Database.Interfaces
         List<User> GetAll();
 
         void Add(User user);
+
+        User Login(string Gebruikersnaam, string Wachtwoord);
     }
 }

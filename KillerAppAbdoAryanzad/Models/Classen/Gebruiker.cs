@@ -27,6 +27,18 @@ namespace KillerAppAbdoAryanzad.Models
 
         }
 
+        public Gebruiker(int Account_ID, string AccountType, string Naam, string Status, string Woonplaats)
+        {
+            this.ID = ID;
+            this.Account_ID = Account_ID;
+            this.Naam = Naam;
+            this.Status = Status;
+            this.Woonplaats = Woonplaats;
+            this.AccountType = AccountType;
+            this.Woonplaats = Woonplaats;
+
+        }
+
 
     }
 }

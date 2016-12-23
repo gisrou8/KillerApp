@@ -25,5 +25,10 @@ namespace KillerAppAbdoAryanzad.Database.Repositories
         {
             context.Add(u);
         }
+
+        public User Login(string Gebruikersnaam, string Wachtwoord)
+        {
+            return context.Login(Gebruikersnaam, Wachtwoord);
+        }
     }
 }
