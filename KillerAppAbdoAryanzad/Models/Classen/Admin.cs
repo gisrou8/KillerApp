@@ -7,12 +7,12 @@ namespace KillerAppAbdoAryanzad.Models
 {
     public class Admin 
     {
-        public int ID { get; set; }
-        public int Account_ID { get; set; }
-        public string Naam { get; set; }
-        public string Status { get; set; }
-        public string Woonplaats { get; set; }
-        public string AccountType { get; set; }
+        public int ID { get; private set; }
+        public int Account_ID { get; private set; }
+        public string Naam { get; private set; }
+        public string Status { get; private set; }
+        public string Woonplaats { get; private set; }
+        public string AccountType { get; private set; }
 
         public Admin(int ID, int Account_ID, string AccountType, string Naam, string Status, string Woonplaats)
         {

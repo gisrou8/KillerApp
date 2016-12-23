@@ -7,10 +7,10 @@ namespace KillerAppAbdoAryanzad.Models
 {
     public class User
     {
-        public int ID { get; set; }
-        public string Gebruikersnaam { get; set; }
-        public string Wachtwoord { get; set; }
-        public string Email { get; set; }
+        public int ID { get; private set; }
+        public string Gebruikersnaam { get; private set; }
+        public string Wachtwoord { get; private set; }
+        public string Email { get; private set; }
         
 
 

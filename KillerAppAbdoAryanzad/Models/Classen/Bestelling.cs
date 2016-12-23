@@ -7,8 +7,8 @@ namespace KillerAppAbdoAryanzad.Models
 {
     public class Bestelling
     {
-        public int ID { get; set; }
-        public decimal Prijs { get; set; }
+        public int ID { get; private set; }
+        public decimal Prijs { get; private set; }
         private List<Bijproduct> Bijproducten = new List<Bijproduct>();
         private List<TypeDrugs> Typedrugsen = new List<TypeDrugs>();
 

@@ -7,11 +7,11 @@ namespace KillerAppAbdoAryanzad.Models
 {
     public class TypeDrugs
     {
-        public int ID { get; set; }
-        public int SoftdrugsID { get; set; }
-        public string Naam { get; set; }
-        public string ExtraInformatie { get; set; }
-        public decimal Prijs { get; set; }
+        public int ID { get; private set; }
+        public int SoftdrugsID { get; private set; }
+        public string Naam { get; private set; }
+        public string ExtraInformatie { get; private set; }
+        public decimal Prijs { get; private set; }
         private List<Bestelling> Bestellingen = new List<Bestelling>();
         private List<Reactie> Reacties = new List<Reactie>();
         private Specificatie Specificatie;

@@ -11,22 +11,19 @@ namespace KillerAppAbdoAryanzad.Database
 {
     public class MSSQLBestellingProcedure : IBestelling
     {
-        public DataTable dt { get; set; }
+        //public DataTable dt { get; private set; }
 
 
         public MSSQLBestellingProcedure()
         {
-            dt = new DataTable();
-            DataTableAanmaken();
+            //dt = new DataTable();
+            //DataTableAanmaken();
         }
       
-        public void TableClearen()
-        {
-            dt.Clear();
-        }
+       
     
 
-        public void ProcedureUitvoeren(Gebruiker g)
+        public void ProcedureUitvoeren(Gebruiker g, DataTable dt)
         {
 
             SqlCommand cmd = new SqlCommand("[dbo].[BestellingUitvoeren]");
@@ -44,17 +41,17 @@ namespace KillerAppAbdoAryanzad.Database
            
         }
 
-        private void DataTableAanmaken()
-        {
-            dt.Columns.Add("Product", typeof(string));
-            dt.Columns.Add("Prijs", typeof(double));
-        }
+        //private void DataTableAanmaken()
+        //{
+        //    dt.Columns.Add("Product", typeof(string));
+        //    dt.Columns.Add("Prijs", typeof(double));
+        //}
 
 
-        public void AddToTable(string Product, double Prijs)
-        {
-            dt.Rows.Add(Product, Prijs);
-        }
+        //public void AddToTable(string Product, double Prijs)
+        //{
+        //    dt.Rows.Add(Product, Prijs);
+        //}
 
 
 

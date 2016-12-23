@@ -33,7 +33,7 @@
                             <h4>
                                 @foreach (var it in Model.gebruikers)
                             {
-                                if (i.ID == it.ID)
+                                if (i.AccountTypeID == it.ID)
                                 {
                                     @(it.Naam + ":");
 
@@ -48,6 +48,16 @@
                 }
 
             </div>
+            @using (Html.BeginForm("BijproductProduct", "Home", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <h3><label id="labelbeschrijving" for="exampleTextarea">Reactie:</label></h3>
+                    <textarea class="form-control" id="exampleTextarea" name="Tekst" style="max-width: 100%;" rows="5"></textarea>
+                </div>
+                <div class="text-right">
+                    <input class="btn btn-success" type="submit" value="Reactie Plaatsen">
+                </div>
+            }
         </div>
     </div>
 </div>

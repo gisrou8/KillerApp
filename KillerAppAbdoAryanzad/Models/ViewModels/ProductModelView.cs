@@ -32,12 +32,14 @@ namespace KillerAppAbdoAryanzad.Models.ViewModels
             this.gebruikers = gebruikers;
             toonSoftreacties = new List<Reactie>();
             toonBijreacties = new List<Reactie>();
+            
 
             foreach (var i in typedrugsen)
             {
                 if (i.ID == id)
                 {            
                     Typedrug = i;
+                    
                     foreach (var sp in specdrugs)
                     {
                         if (sp.TypeDrugsID == i.ID)
@@ -79,18 +81,12 @@ namespace KillerAppAbdoAryanzad.Models.ViewModels
 
         }
 
-        public ProductModelView(int id,  List<Reactie> reacties, List<Gebruiker> gebruikers)
+       public void ReactieToevoegen(int Accountid, int TypedrugsID, string tekst)
         {
-            
-            this.reacties = reacties;
-            this.gebruikers = gebruikers;
-            
-
-           
-
+            Reactie r = new Reactie(null, Accountid, null, TypedrugsID, tekst);
+            this.reacties.Add(r);
 
         }
-
 
     }
 }

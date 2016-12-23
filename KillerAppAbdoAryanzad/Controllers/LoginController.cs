@@ -81,7 +81,7 @@ namespace KillerAppAbdoAryanzad.Controllers
                 }
                 else
                 {
-                    return View();
+                    return RedirectToAction("Registreren", "Login");
                 }
                 
             }

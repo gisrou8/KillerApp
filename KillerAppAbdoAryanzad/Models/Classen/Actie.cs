@@ -7,10 +7,10 @@ namespace KillerAppAbdoAryanzad.Models
 {
     public class Actie
     {
-        public int ID { get; set; }
-        public int Korting { get; set; }
-        public int Coupon { get; set; }
-        public string actie { get; set; }
+        public int ID { get; private set; }
+        public int Korting { get; private set; }
+        public int Coupon { get; private set; }
+        public string actie { get; private set; }
 
 
         public Actie(int ID, int Korting, int Coupon, string actie)

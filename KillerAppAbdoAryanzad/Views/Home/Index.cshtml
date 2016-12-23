@@ -6,16 +6,22 @@
 <div class="jumbotron" style="text-align:center">
     <h1>CoffeeShop Online</h1>
     <p class="lead">Voor de beste Wiet en Hasj. </p>
+@using (Html.BeginForm("Zoek", "Zoek", FormMethod.Post))
+{
     <form>
         <div class="col-md-6 col-md-offset-3">
-            <div class="input-group input-group-lg">
-                <input type="text" class="form-control" placeholder="Product">
-                <button class="btn btn-info" type="submit">
-                    <i class="icon-search"></i>&nbsp;Zoeken
-                </button>
-            </div>
+            
+                <div class="input-group input-group-lg">
+                    <input type="text" name="Tekst" class="form-control" placeholder="Product">
+                    <button class="btn btn-info" type="submit">
+                        <i class="icon-search"></i>&nbsp;Zoeken
+                    </button>
+                </div>
+           
+            
         </div>
     </form>
+}
 </div>
 
 <div class="row">

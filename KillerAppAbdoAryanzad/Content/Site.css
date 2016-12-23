@@ -234,6 +234,12 @@ fieldset {
     margin: 0 auto;
 }
 
+textarea.form-control {
+    height: auto;
+    max-width: 100%;
+}
+
+
 
 
 

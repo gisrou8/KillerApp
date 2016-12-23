@@ -10,8 +10,8 @@ namespace KillerAppAbdoAryanzad.Database.Interfaces
 {
     public interface IBestelling
     {
-        void ProcedureUitvoeren(Gebruiker g);
+        void ProcedureUitvoeren(Gebruiker g, DataTable dt);
 
-        void AddToTable(string Product, double Prijs);
+        
     }
 }

@@ -2,6 +2,7 @@
 using KillerAppAbdoAryanzad.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -17,16 +18,15 @@ namespace KillerAppAbdoAryanzad.Database.Repositories
             
         }
 
-        public void ProcedureUitvoeren(Gebruiker g)
+        public void ProcedureUitvoeren(Gebruiker g, DataTable dt)
         {
-            context.ProcedureUitvoeren(g);
+            context.ProcedureUitvoeren(g, dt);
         }
 
+       
 
-        public void RijenToevoegen(string Product, double Prijs)
-        {
-            context.AddToTable(Product, Prijs);
-        }
+
+       
 
 
 

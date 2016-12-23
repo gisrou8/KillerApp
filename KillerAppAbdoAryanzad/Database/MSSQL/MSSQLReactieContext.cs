@@ -40,16 +40,40 @@ namespace KillerAppAbdoAryanzad.Database
 
         public void Add(Reactie Reactie)
         {
-            SqlCommand cmd = new SqlCommand("Insert into Reactie (Account_ID, AccountType_ID, Bijproduct_ID, TypeDrugs_ID, Tekst)"
-                                             + "Values (@Account_ID, @AccountType_ID, @Bijproduct_ID, @TypeDrugs_ID, @Tekst)");
+            SqlCommand cmd = new SqlCommand("Insert into Reactie (Reactie_ID, AccountType_ID, Bijproduct_ID, TypeDrugs_ID, Tekst)"
+                                             + "Values (@Reactie_ID, @AccountType_ID, @Bijproduct_ID, @TypeDrugs_ID, @Tekst)");
 
             using (DatabaseConnectie conn = new DatabaseConnectie())
             {
                 cmd.Connection = conn.Conn;
-                cmd.Parameters.AddWithValue("@Account_ID", Reactie.ReactieID);
+                if(Reactie.ReactieID == null)
+                {
+                    cmd.Parameters.AddWithValue("@Reactie_ID", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Reactie_ID", Reactie.ReactieID);
+                }
+
                 cmd.Parameters.AddWithValue("@AccountType_ID", Reactie.AccountTypeID);
-                cmd.Parameters.AddWithValue("@Bijproduct_ID", Reactie.Bijproduct_ID);
-                cmd.Parameters.AddWithValue("@TypeDrugs_ID", Reactie.TypeDrugs_ID);
+
+                if (Reactie.Bijproduct_ID == null)
+                {
+                    cmd.Parameters.AddWithValue("@Bijproduct_ID", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Bijproduct_ID", Reactie.Bijproduct_ID);
+                }
+                if (Reactie.TypeDrugs_ID == null)
+                {
+                    cmd.Parameters.AddWithValue("@TypeDrugs_ID", DBNull.Value); 
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@TypeDrugs_ID", Reactie.TypeDrugs_ID);
+                }
+
                 cmd.Parameters.AddWithValue("@Tekst", Reactie.Tekst);
                 cmd.ExecuteNonQuery();
             }

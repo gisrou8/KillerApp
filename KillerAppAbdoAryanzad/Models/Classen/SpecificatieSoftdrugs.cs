@@ -7,9 +7,9 @@ namespace KillerAppAbdoAryanzad.Models
 {
     public class SpecificatieSoftdrugs
     {
-        public int ID { get; set; }
-        public int SpecificatieID { get; set; }
-        public int TypeDrugsID { get; set; }
+        public int ID { get; private set; }
+        public int SpecificatieID { get; private set; }
+        public int TypeDrugsID { get; private set; }
 
         public SpecificatieSoftdrugs(int ID, int SpecificatieID, int TypeDrugsID)
         {
